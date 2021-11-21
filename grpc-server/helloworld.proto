@@ -36,6 +36,10 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
+  message MeterUsageEntry {
     google.protobuf.Timestamp time = 1;
     float meterusage = 2;
+
+  }
+  repeated MeterUsageEntry meterusage = 1;
 }

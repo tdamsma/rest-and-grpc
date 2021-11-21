@@ -28,7 +28,16 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         timestamp = Timestamp()
         timestamp.GetCurrentTime()
 
-        return helloworld_pb2.HelloReply(time=timestamp, meterusage=1.23)
+        return helloworld_pb2.HelloReply(
+            meterusage=[
+                helloworld_pb2.HelloReply.MeterUsageEntry(
+                    time=timestamp, meterusage=1.23
+                ),
+                helloworld_pb2.HelloReply.MeterUsageEntry(
+                    time=timestamp, meterusage=3.45
+                ),
+            ]
+        )
 
 
 def serve():
