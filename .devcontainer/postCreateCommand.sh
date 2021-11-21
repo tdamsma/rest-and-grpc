@@ -15,3 +15,4 @@ echo "alias jn='jupyter notebook --allow-root --ip 0.0.0.0 --no-browser --notebo
 # seed the history file
 echo ": 1569311365:0;autoformat **/*.py" >> ~/.zsh_history
 echo ": 1569311395:0;jn" >> ~/.zsh_history
+echo ": 1569311395:0;uvicorn rest-server.main:app --port=5000 --reload" >> ~/.zsh_history

@@ -1,10 +1,10 @@
-from typing import Optional
-from datetime import datetime
-from fastapi import FastAPI
-from pydantic import BaseModel, validator
 import csv
 import math
+from datetime import datetime
+from typing import Optional
 
+from fastapi import FastAPI
+from pydantic import BaseModel, validator
 
 app = FastAPI()
 

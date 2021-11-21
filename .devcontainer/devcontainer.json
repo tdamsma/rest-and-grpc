@@ -12,7 +12,8 @@
     "eamodio.gitlens",
     "ms-python.vscode-pylance",
     "sourcery.sourcery",
-    "humao.rest-client"
+    "humao.rest-client",
+    "zxh404.vscode-proto3"
   ],
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh",
