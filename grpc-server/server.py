@@ -13,10 +13,9 @@ class Greeter(meterusage_pb2_grpc.GetMeterUsageServicer):
     def ReturnMeterUsage(self, request, context):
         timestamp = Timestamp()
         timestamp.GetCurrentTime()
-        print("received request")
-
-        time.sleep(1)
-        print("done processing")
+        print(f"received {request=}")
+        time.sleep(2)
+        print(f"done processing  {request=}")
 
         return meterusage_pb2.MeterUsageReply(
             meterusage=[
@@ -31,7 +30,7 @@ class Greeter(meterusage_pb2_grpc.GetMeterUsageServicer):
 
 
 def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=4))
     meterusage_pb2_grpc.add_GetMeterUsageServicer_to_server(Greeter(), server)
     server.add_insecure_port("[::]:50051")
     server.start()

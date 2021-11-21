@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     syntax="proto3",
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
-    serialized_pb=b'\n\x10meterusage.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\x13\n\x11MeterUsageRequest"\x98\x01\n\x0fMeterUsageReply\x12\x34\n\nmeterusage\x18\x01 \x03(\x0b\x32 .MeterUsageReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32K\n\rGetMeterUsage\x12:\n\x10ReturnMeterUsage\x12\x12.MeterUsageRequest\x1a\x10.MeterUsageReply"\x00\x62\x06proto3',
+    serialized_pb=b'\n\x10meterusage.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\'\n\x11MeterUsageRequest\x12\x12\n\nidentifier\x18\x01 \x01(\t"\x98\x01\n\x0fMeterUsageReply\x12\x34\n\nmeterusage\x18\x01 \x03(\x0b\x32 .MeterUsageReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32K\n\rGetMeterUsage\x12:\n\x10ReturnMeterUsage\x12\x12.MeterUsageRequest\x1a\x10.MeterUsageReply"\x00\x62\x06proto3',
     dependencies=[
         google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,
     ],
@@ -34,7 +34,27 @@ _METERUSAGEREQUEST = _descriptor.Descriptor(
     file=DESCRIPTOR,
     containing_type=None,
     create_key=_descriptor._internal_create_key,
-    fields=[],
+    fields=[
+        _descriptor.FieldDescriptor(
+            name="identifier",
+            full_name="MeterUsageRequest.identifier",
+            index=0,
+            number=1,
+            type=9,
+            cpp_type=9,
+            label=1,
+            has_default_value=False,
+            default_value=b"".decode("utf-8"),
+            message_type=None,
+            enum_type=None,
+            containing_type=None,
+            is_extension=False,
+            extension_scope=None,
+            serialized_options=None,
+            file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
+        ),
+    ],
     extensions=[],
     nested_types=[],
     enum_types=[],
@@ -44,7 +64,7 @@ _METERUSAGEREQUEST = _descriptor.Descriptor(
     extension_ranges=[],
     oneofs=[],
     serialized_start=53,
-    serialized_end=72,
+    serialized_end=92,
 )
 
 
@@ -103,8 +123,8 @@ _METERUSAGEREPLY_METERUSAGEENTRY = _descriptor.Descriptor(
     syntax="proto3",
     extension_ranges=[],
     oneofs=[],
-    serialized_start=148,
-    serialized_end=227,
+    serialized_start=168,
+    serialized_end=247,
 )
 
 _METERUSAGEREPLY = _descriptor.Descriptor(
@@ -145,8 +165,8 @@ _METERUSAGEREPLY = _descriptor.Descriptor(
     syntax="proto3",
     extension_ranges=[],
     oneofs=[],
-    serialized_start=75,
-    serialized_end=227,
+    serialized_start=95,
+    serialized_end=247,
 )
 
 _METERUSAGEREPLY_METERUSAGEENTRY.fields_by_name[
@@ -200,8 +220,8 @@ _GETMETERUSAGE = _descriptor.ServiceDescriptor(
     index=0,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
-    serialized_start=229,
-    serialized_end=304,
+    serialized_start=249,
+    serialized_end=324,
     methods=[
         _descriptor.MethodDescriptor(
             name="ReturnMeterUsage",
