@@ -16,11 +16,11 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 
 DESCRIPTOR = _descriptor.FileDescriptor(
     name="helloworld.proto",
-    package="helloworld",
+    package="",
     syntax="proto3",
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
-    serialized_pb=b'\n\x10helloworld.proto\x12\nhelloworld\x1a\x1fgoogle/protobuf/timestamp.proto"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t"\x99\x01\n\nHelloReply\x12:\n\nmeterusage\x18\x01 \x03(\x0b\x32&.helloworld.HelloReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32I\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply"\x00\x62\x06proto3',
+    serialized_pb=b'\n\x10helloworld.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t"\x8e\x01\n\nHelloReply\x12/\n\nmeterusage\x18\x01 \x03(\x0b\x32\x1b.HelloReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32\x33\n\x07Greeter\x12(\n\x08SayHello\x12\r.HelloRequest\x1a\x0b.HelloReply"\x00\x62\x06proto3',
     dependencies=[
         google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,
     ],
@@ -29,7 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _HELLOREQUEST = _descriptor.Descriptor(
     name="HelloRequest",
-    full_name="helloworld.HelloRequest",
+    full_name="HelloRequest",
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
@@ -37,7 +37,7 @@ _HELLOREQUEST = _descriptor.Descriptor(
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
-            full_name="helloworld.HelloRequest.name",
+            full_name="HelloRequest.name",
             index=0,
             number=1,
             type=9,
@@ -63,14 +63,14 @@ _HELLOREQUEST = _descriptor.Descriptor(
     syntax="proto3",
     extension_ranges=[],
     oneofs=[],
-    serialized_start=65,
-    serialized_end=93,
+    serialized_start=53,
+    serialized_end=81,
 )
 
 
 _HELLOREPLY_METERUSAGEENTRY = _descriptor.Descriptor(
     name="MeterUsageEntry",
-    full_name="helloworld.HelloReply.MeterUsageEntry",
+    full_name="HelloReply.MeterUsageEntry",
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
@@ -78,7 +78,7 @@ _HELLOREPLY_METERUSAGEENTRY = _descriptor.Descriptor(
     fields=[
         _descriptor.FieldDescriptor(
             name="time",
-            full_name="helloworld.HelloReply.MeterUsageEntry.time",
+            full_name="HelloReply.MeterUsageEntry.time",
             index=0,
             number=1,
             type=11,
@@ -97,7 +97,7 @@ _HELLOREPLY_METERUSAGEENTRY = _descriptor.Descriptor(
         ),
         _descriptor.FieldDescriptor(
             name="meterusage",
-            full_name="helloworld.HelloReply.MeterUsageEntry.meterusage",
+            full_name="HelloReply.MeterUsageEntry.meterusage",
             index=1,
             number=2,
             type=2,
@@ -123,13 +123,13 @@ _HELLOREPLY_METERUSAGEENTRY = _descriptor.Descriptor(
     syntax="proto3",
     extension_ranges=[],
     oneofs=[],
-    serialized_start=170,
-    serialized_end=249,
+    serialized_start=147,
+    serialized_end=226,
 )
 
 _HELLOREPLY = _descriptor.Descriptor(
     name="HelloReply",
-    full_name="helloworld.HelloReply",
+    full_name="HelloReply",
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
@@ -137,7 +137,7 @@ _HELLOREPLY = _descriptor.Descriptor(
     fields=[
         _descriptor.FieldDescriptor(
             name="meterusage",
-            full_name="helloworld.HelloReply.meterusage",
+            full_name="HelloReply.meterusage",
             index=0,
             number=1,
             type=11,
@@ -165,8 +165,8 @@ _HELLOREPLY = _descriptor.Descriptor(
     syntax="proto3",
     extension_ranges=[],
     oneofs=[],
-    serialized_start=96,
-    serialized_end=249,
+    serialized_start=84,
+    serialized_end=226,
 )
 
 _HELLOREPLY_METERUSAGEENTRY.fields_by_name[
@@ -184,7 +184,7 @@ HelloRequest = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _HELLOREQUEST,
         "__module__": "helloworld_pb2"
-        # @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
+        # @@protoc_insertion_point(class_scope:HelloRequest)
     },
 )
 _sym_db.RegisterMessage(HelloRequest)
@@ -199,12 +199,12 @@ HelloReply = _reflection.GeneratedProtocolMessageType(
             {
                 "DESCRIPTOR": _HELLOREPLY_METERUSAGEENTRY,
                 "__module__": "helloworld_pb2"
-                # @@protoc_insertion_point(class_scope:helloworld.HelloReply.MeterUsageEntry)
+                # @@protoc_insertion_point(class_scope:HelloReply.MeterUsageEntry)
             },
         ),
         "DESCRIPTOR": _HELLOREPLY,
         "__module__": "helloworld_pb2"
-        # @@protoc_insertion_point(class_scope:helloworld.HelloReply)
+        # @@protoc_insertion_point(class_scope:HelloReply)
     },
 )
 _sym_db.RegisterMessage(HelloReply)
@@ -213,17 +213,17 @@ _sym_db.RegisterMessage(HelloReply.MeterUsageEntry)
 
 _GREETER = _descriptor.ServiceDescriptor(
     name="Greeter",
-    full_name="helloworld.Greeter",
+    full_name="Greeter",
     file=DESCRIPTOR,
     index=0,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
-    serialized_start=251,
-    serialized_end=324,
+    serialized_start=228,
+    serialized_end=279,
     methods=[
         _descriptor.MethodDescriptor(
             name="SayHello",
-            full_name="helloworld.Greeter.SayHello",
+            full_name="Greeter.SayHello",
             index=0,
             containing_service=None,
             input_type=_HELLOREQUEST,
