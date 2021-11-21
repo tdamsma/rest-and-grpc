@@ -1,7 +1,6 @@
 """gRPC server for meterusage data from a csv file."""
 
 import logging
-
 from concurrent import futures
 
 import grpc

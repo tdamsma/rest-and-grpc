@@ -1,0 +1,23 @@
+<html>
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<h1>Demo frontend</h1>
+<div id="spreadsheet"></div>
+<script>
+    const getData = async () => {
+        const response = await fetch('/meterusage');
+        const myJson = await response.json(); //extract JSON from the http response
+        jspreadsheet(document.getElementById('spreadsheet'), {
+            data: myJson,
+            columns: [
+                { type: 'datetime', title: 'time', width: 200 },
+                { type: 'numeric', title: 'meterusage', width: 100, mask: '0.00', decimal: '.' },
+            ]
+        });
+    }
+    getData()
+</script>
+
+</html>

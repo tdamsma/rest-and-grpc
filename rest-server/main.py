@@ -1,24 +1,19 @@
-import csv
 import math
+import sys
+import uuid
 from datetime import datetime
 from typing import Optional
 
-from fastapi import FastAPI
-from pydantic import BaseModel, validator
-import asyncio
-import logging
-import uuid
-
 import grpc
-
-import sys
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, validator
 
 sys.path
 sys.path.append("grpc-server")
 
 import meterusage_pb2
 import meterusage_pb2_grpc
-
 
 app = FastAPI()
 
@@ -56,3 +51,6 @@ async def read_meterusage():
         )
 
     return [MeterUsageEntry.from_grpc(entry) for entry in response.meterusage]
+
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
