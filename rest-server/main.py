@@ -5,6 +5,20 @@ from typing import Optional
 
 from fastapi import FastAPI
 from pydantic import BaseModel, validator
+import asyncio
+import logging
+import uuid
+
+import grpc
+
+import sys
+
+sys.path
+sys.path.append("grpc-server")
+
+import meterusage_pb2
+import meterusage_pb2_grpc
+
 
 app = FastAPI()
 
@@ -17,20 +31,28 @@ class MeterUsageEntry(BaseModel):
     def meterusage_isfinite(cls, v) -> Optional[float]:
         return v if math.isfinite(v) else None
 
+    @classmethod
+    def from_grpc(
+        cls, entry: meterusage_pb2.MeterUsageReply.MeterUsageEntry
+    ) -> "MeterUsageEntry":
+        return cls(
+            time=datetime.fromtimestamp(
+                entry.time.seconds + entry.time.nanos / 1_000_000_000
+            ),
+            meterusage=entry.meterusage,
+        )
+
 
 class MeterUsage(BaseModel):
     meterusage: list[MeterUsageEntry]
 
 
 @app.get("/meterusage")
-def read_meterusage():
-    with open("data/meterusage.csv") as f:
-        meterusage = MeterUsage(
-            meterusage=[MeterUsageEntry(**row) for row in csv.DictReader(f)]
+async def read_meterusage():
+    async with grpc.aio.insecure_channel("localhost:50051") as channel:
+        stub = meterusage_pb2_grpc.GetMeterUsageStub(channel)
+        response = await stub.ReturnMeterUsage(
+            meterusage_pb2.MeterUsageRequest(identifier=str(uuid.uuid4()))
         )
-    return meterusage
 
-
-@app.get("/meterusage_entry")
-def read_meterusage_entry():
-    return MeterUsageEntry(time=datetime.now(), meterusage=1)
+    return [MeterUsageEntry.from_grpc(entry) for entry in response.meterusage]
