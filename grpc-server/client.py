@@ -15,6 +15,7 @@
 
 from __future__ import print_function
 
+import asyncio
 import logging
 
 import grpc
@@ -23,16 +24,17 @@ import meterusage_pb2
 import meterusage_pb2_grpc
 
 
-def run():
-    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
-    # used in circumstances in which the with statement does not fit the needs
-    # of the code.
-    with grpc.insecure_channel("localhost:50051") as channel:
+async def make_request():
+    async with grpc.aio.insecure_channel("localhost:50051") as channel:
         stub = meterusage_pb2_grpc.GetMeterUsageStub(channel)
-        response = stub.ReturnMeterUsage(meterusage_pb2.MeterUsageRequest())
-    print(f"Greeter client received: {response=}")
+        response = await stub.ReturnMeterUsage(meterusage_pb2.MeterUsageRequest())
+        print(f"Greeter client received: {response=}")
+
+
+async def run() -> None:
+    await asyncio.gather(make_request(), make_request())
 
 
 if __name__ == "__main__":
     logging.basicConfig()
-    run()
+    asyncio.run(run())

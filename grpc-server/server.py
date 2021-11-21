@@ -1,4 +1,5 @@
 import logging
+import time
 from concurrent import futures
 
 import grpc
@@ -12,6 +13,10 @@ class Greeter(meterusage_pb2_grpc.GetMeterUsageServicer):
     def ReturnMeterUsage(self, request, context):
         timestamp = Timestamp()
         timestamp.GetCurrentTime()
+        print("received request")
+
+        time.sleep(1)
+        print("done processing")
 
         return meterusage_pb2.MeterUsageReply(
             meterusage=[
