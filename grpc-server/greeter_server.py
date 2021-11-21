@@ -17,13 +17,18 @@ import logging
 from concurrent import futures
 
 import grpc
+from google.protobuf.timestamp_pb2 import Timestamp
+
 import helloworld_pb2
 import helloworld_pb2_grpc
 
 
 class Greeter(helloworld_pb2_grpc.GreeterServicer):
     def SayHello(self, request, context):
-        return helloworld_pb2.HelloReply(message="Hello, %s!" % request.name)
+        timestamp = Timestamp()
+        timestamp.GetCurrentTime()
+
+        return helloworld_pb2.HelloReply(time=timestamp, meterusage=1.23)
 
 
 def serve():

@@ -19,6 +19,8 @@ option java_package = "io.grpc.examples.helloworld";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
+import "google/protobuf/timestamp.proto";
+
 package helloworld;
 
 // The greeting service definition.
@@ -34,5 +36,6 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
-  string message = 1;
+    google.protobuf.Timestamp time = 1;
+    float meterusage = 2;
 }
