@@ -1,0 +1,12 @@
+version: "3.2"
+
+services:
+  rest:
+    volumes:
+      - .:/code:delegated
+    command: bash -c "tail -f /dev/null"
+    ports:
+      - "5000:5000" # fastapi
+      - "8888:8888" # notebooks
+    cap_add:
+      - SYS_PTRACE

@@ -1,0 +1,6 @@
+autoflake
+isort
+jupyter
+jupyter_contrib_nbextensions
+py-spy
+sqlparse
