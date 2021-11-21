@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     name="helloworld.proto",
     package="helloworld",
     syntax="proto3",
-    serialized_options=b"\n\033io.grpc.examples.helloworldB\017HelloWorldProtoP\001\242\002\003HLW",
+    serialized_options=None,
     create_key=_descriptor._internal_create_key,
-    serialized_pb=b'\n\x10helloworld.proto\x12\nhelloworld\x1a\x1fgoogle/protobuf/timestamp.proto"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t"\x99\x01\n\nHelloReply\x12:\n\nmeterusage\x18\x01 \x03(\x0b\x32&.helloworld.HelloReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32I\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply"\x00\x42\x36\n\x1bio.grpc.examples.helloworldB\x0fHelloWorldProtoP\x01\xa2\x02\x03HLWb\x06proto3',
+    serialized_pb=b'\n\x10helloworld.proto\x12\nhelloworld\x1a\x1fgoogle/protobuf/timestamp.proto"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t"\x99\x01\n\nHelloReply\x12:\n\nmeterusage\x18\x01 \x03(\x0b\x32&.helloworld.HelloReply.MeterUsageEntry\x1aO\n\x0fMeterUsageEntry\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nmeterusage\x18\x02 \x01(\x02\x32I\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply"\x00\x62\x06proto3',
     dependencies=[
         google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,
     ],
@@ -210,8 +210,6 @@ HelloReply = _reflection.GeneratedProtocolMessageType(
 _sym_db.RegisterMessage(HelloReply)
 _sym_db.RegisterMessage(HelloReply.MeterUsageEntry)
 
-
-DESCRIPTOR._options = None
 
 _GREETER = _descriptor.ServiceDescriptor(
     name="Greeter",
