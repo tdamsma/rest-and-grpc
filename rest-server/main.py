@@ -26,10 +26,7 @@ class MeterUsage(BaseModel):
 def read_meterusage():
     with open("data/meterusage.csv") as f:
         meterusage = MeterUsage(
-            meterusage=[
-                MeterUsageEntry(**row)
-                for row in csv.DictReader(f, skipinitialspace=True)
-            ]
+            meterusage=[MeterUsageEntry(**row) for row in csv.DictReader(f)]
         )
     return meterusage
 

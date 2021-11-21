@@ -1,11 +1,23 @@
 # Demo app combining REST and gRPC
 
-## REST
+## Development notes
+### REST server
 
 Using FastAPI framework
 
-Launch with:
+Start with:
 
 ```bash
 uvicorn rest-server.main:app --port=5000 --reload
+```
+
+
+### gRPC server
+
+Using the gRPC framework
+
+Start with:
+
+```bash
+python grpc-server/server.py
 ```
