@@ -1,1 +1,4 @@
+# useful for testing rest endpoints, to be used in conjunction with the rest extension:
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
 http://127.0.0.1:5000/meterusage

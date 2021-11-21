@@ -1,8 +1,18 @@
 version: "3.2"
 
 services:
-  rest:
+  fastapi:
+    container_name: fastapi-server
+    environment:
+      GRPC_HOST: grpc-server
+      GRPC_PORT: "50051"
     build:
       context: .
     ports:
       - "5000:5000" # fastapi
+    command: ["sh", "-c", "uvicorn rest-server.main:app --port=5000 --host=0.0.0.0"]
+  grpc:
+    container_name: grpc-server
+    build:
+      context: .
+    command: ["sh", "-c", "python grpc-server/server.py"]

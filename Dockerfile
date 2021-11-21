@@ -51,4 +51,8 @@ ADD --chown=me:me . /code
 # set the permissions for the UID/GID
 RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then groupmod --gid $USER_GID me && usermod --uid $USER_UID --gid $USER_GID me; fi
 
+USER root
+RUN chown -R me:me /home/me/.cache
+USER me
+
 EXPOSE 5000
