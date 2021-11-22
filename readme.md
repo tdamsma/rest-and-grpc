@@ -1,6 +1,16 @@
 # Demo app combining REST and gRPC
 
-Run with `docker-compose up` and visit http://localhost:5000/
+This demo serves a simple dataset with a rest endpoint via a gRPC service. The gRPC and REST servicies each run in a seperate docker container.
+
+To run the demo:
+
+```bash
+git clone git@github.com:tdamsma/rest-and-grpc.git
+cd rest-and-grpc
+docker-compose up
+```
+
+And the visit http://localhost:5000/
 
 ## Development notes
 
